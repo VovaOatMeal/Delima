@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CommonText" >
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+    <style name="CommonText.MediumSize" parent="CommonText">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CommonText.MediumSize.Dark" parent="CommonText.MediumSize">
+        <item name="android:textColor">@color/colorOnSecondary2</item>
+    </style>
+
+    <style name="CommonText.Dark" parent="CommonText">
+        <item name="android:textColor">@color/colorOnSecondary2</item>
+    </style>
+
+    <style name="CommonText.MediumSize.noCaps" parent="CommonText.MediumSize">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="CommonText.MediumSize.Caps" parent="CommonText.MediumSize">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="CommonText.SmallSize" parent="CommonText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CommonText.SmallSize.Caps" parent="CommonText.SmallSize">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="CommonText.SmallSize.Dark" parent="CommonText.SmallSize">
+        <item name="android:textColor">@color/colorOnSecondary2</item>
+    </style>
+
+    <style name="NewTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#000</item>
+    </style>
+
+    <style name="NewTextInputEditText">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="Button" parent="CommonText.MediumSize">
+
+    </style>
+
+    <style name="Button.Unelevated" parent="Button">
+        <item name="android:stateListAnimator">@animator/mtrl_btn_unelevated_state_list_anim</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+
+</resources>

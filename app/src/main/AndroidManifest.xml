@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.oatmealprogs.delima">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.Delima">
+        <activity android:name=".Teacher.TeacherAddNewMark"></activity>
+        <activity android:name=".Teacher.TeacherEditMark" />
+        <activity android:name=".Teacher.TeacherClassStudentMarks" />
+        <activity android:name=".Teacher.TeacherClassMarks" />
+        <activity android:name=".Teacher.TeacherEditTask" />
+        <activity android:name=".Teacher.TeacherAddNewTask" />
+        <activity android:name=".Shared.HomeworkDetails" />
+        <activity android:name=".Teacher.TeacherClassHomework" />
+        <activity android:name=".Teacher.TeacherClassChosen" />
+        <activity android:name=".Teacher.TeacherSubject" />
+        <activity android:name=".Teacher.TeacherUserDetails" />
+        <activity android:name=".Student.StudentUserDetails" />
+        <activity android:name=".Teacher.TeacherLogIn" />
+        <activity android:name=".Teacher.TeacherMainScreen" />
+        <activity android:name=".Student.StudentMainScreen" />
+        <activity android:name=".Student.StudentLogIn" />
+        <activity android:name=".LogInScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

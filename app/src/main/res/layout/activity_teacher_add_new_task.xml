@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher.TeacherAddNewTask">
+
+    <ImageButton
+        android:id="@+id/teacherAddNewTask_backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/white"
+        android:onClick="goBack"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/teacherAddNewTask_Title"
+        app:layout_constraintEnd_toStartOf="@+id/teacherAddNewTask_Title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/teacherAddNewTask_Title"
+        app:srcCompat="@drawable/ic_arrow_left" />
+
+    <TextView
+        android:id="@+id/teacherAddNewTask_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/New_task"
+        android:textAppearance="@style/CommonText.MediumSize.Dark"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
+        android:text="Дата: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherAddNewTask_Title" />
+
+    <TextView
+        android:id="@+id/teacherAddNewTask_date"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/TaskLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+    <!--
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5" />
+-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/teacherAddNewTask_descriptionField"
+        style="@style/NewTextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:focusable="true"
+            android:gravity="top|left"
+            android:hint="@string/Task_hint"
+            android:inputType="textMultiLine"
+            android:maxLines="8"
+            android:minLines="6"
+            android:scrollbars="vertical" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="64dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherAddNewTask_descriptionField">
+
+        <Button
+            android:id="@+id/teacherAddNewTask_addButton"
+            style="@style/CommonText.MediumSize"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="250dp"
+            android:text="@string/Add"
+            android:onClick="addTask"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/teacherAddNewTask_descriptionField" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/teacherAddNewTask_chooseDate"
+        style="@style/CommonText.MediumSize"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:onClick="setDate"
+        android:text="@string/Choose"
+        app:layout_constraintBottom_toBottomOf="@+id/teacherAddNewTask_date"
+        app:layout_constraintStart_toEndOf="@+id/teacherAddNewTask_date"
+        app:layout_constraintTop_toTopOf="@+id/teacherAddNewTask_date" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

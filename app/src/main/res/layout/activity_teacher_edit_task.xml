@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher.TeacherEditTask">
+
+    <ImageButton
+        android:id="@+id/teacherEditTask_backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/white"
+        android:onClick="goBack"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/teacherEditTask_Title"
+        app:layout_constraintEnd_toStartOf="@+id/teacherEditTask_Title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/teacherEditTask_Title"
+        app:srcCompat="@drawable/ic_arrow_left" />
+
+    <ImageButton
+        android:id="@+id/teacherEditTask_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:onClick="deleteTask"
+        android:padding="16dp"
+        android:tint="@color/colorOnSecondary1"
+        app:layout_constraintBottom_toBottomOf="@+id/teacherEditTask_Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/teacherEditTask_Title"
+        app:srcCompat="@drawable/ic_trash" />
+
+    <TextView
+        android:id="@+id/teacherEditTask_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/TaskLabel2"
+        android:textAppearance="@style/CommonText.MediumSize.Dark"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teacherEditTask_subTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/Editing"
+        android:textAppearance="@style/CommonText.MediumSize.Dark"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherEditTask_Title" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="38dp"
+        android:text="Дата: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherEditTask_subTitle" />
+
+    <TextView
+        android:id="@+id/teacherEditTask_date"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/TaskLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/teacherEditTask_descriptionField"
+        style="@style/NewTextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:focusable="true"
+            android:gravity="top|left"
+            android:hint="@string/Task_hint"
+            android:inputType="textMultiLine"
+            android:maxLines="8"
+            android:minLines="6"
+            android:scrollbars="vertical" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="64dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherEditTask_descriptionField">
+
+        <Button
+            android:id="@+id/teacherEditTask_addButton"
+            style="@style/CommonText.MediumSize"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="250dp"
+            android:text="@string/Done"
+            android:onClick="addTask"
+            />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/teacherEditTask_chooseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:text="@string/Choose"
+        style="@style/CommonText.MediumSize"
+        android:onClick="setDate"
+        app:layout_constraintBottom_toBottomOf="@+id/teacherEditTask_date"
+        app:layout_constraintStart_toEndOf="@+id/teacherEditTask_date"
+        app:layout_constraintTop_toTopOf="@+id/teacherEditTask_date" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name" translatable="false">Delima</string>
+    <string name="login_iamStudent">Я - учень</string>
+    <string name="login_welcome">Ласкаво просимо!</string>
+    <string name="login_iamTeacher">Я - вчитель</string>
+    <string name="login_iamParent">Для батьків</string>
+    <string name="login_signInAsStudent">Увійдіть як учень</string>
+    <string name="your_ID_hint">Ваш ID</string>
+    <string name="password_hint">Пароль</string>
+    <string name="personal_ID_help">Запитайте у вчителя ваш особистий ID ключ</string>
+    <string name="next">Продовжити</string>
+    <string name="signIn">Увійти</string>
+    <string name="login_choose_your_class">Виберіть ваш клас:</string>
+    <string name="studentMainScreen_ClassOnCard">Клас:</string>
+    <string name="studentMainScreen_studentIdText">Мій ID:</string>
+    <string name="login_signInAsTeacher">Увійдіть як вчитель</string>
+    <string name="personal_ID_helpTeacher">Запитайте у адміністратора ваш особистий ID ключ</string>
+    <string name="I_Am_teacher">Вчитель</string>
+    <string name="MyDelima">Моя Delima</string>
+    <string name="Settings">Налаштування</string>
+    <string name="FirstName">Ім\'я:</string>
+    <string name="LastName">Прізвище:</string>
+    <string name="Logout">Вийти</string>
+    <string name="teacher_myClasses">Мої класи</string>
+    <string name="Homework">Завдання</string>
+    <string name="Marks">Оцінки</string>
+    <string name="Add">Додати</string>
+    <string name="Details">Деталі</string>
+    <string name="TaskDetails">Деталі завдання</string>
+    <string name="Open">Відкрити</string>
+    <string name="New_task">Нове завдання</string>
+    <string name="TaskLabel">Завдання:</string>
+    <string name="TaskLabel2">Завдання</string>
+    <string name="Choose">Вибрати</string>
+    <string name="Task_hint">Напишіть завдання тут</string>
+    <string name="Editing">Редагування</string>
+    <string name="Edit">Редагувати</string>
+    <string name="Done">Готово</string>
+    <string name="Students">Учні</string>
+    <string name="New_Mark">Нова оцінка</string>
+    <string name="Mark">Оцінка</string>
+    <string name="Mark_description">Опис оцінки</string>
+
+    <string-array name="class_numbers">
+        <item>Цифра:</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+
+    <string-array name="class_letters">
+        <item>Буква:</item>
+        <item>А</item>
+        <item>Б</item>
+        <item>В</item>
+        <item>Г</item>
+        <item>Д</item>
+        <item>Е</item>
+        <item>Є</item>
+    </string-array>
+
+    <string-array name="marks" >
+        <item>--</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+</resources>

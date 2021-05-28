@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "801433961278",
+    "project_id": "delima-7fc2c",
+    "storage_bucket": "delima-7fc2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801433961278:android:ee3d0700e232293252626f",
+        "android_client_info": {
+          "package_name": "com.oatmealprogs.delima"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801433961278-6q0t4rq7hurqig5q9ue72bjle2qmbfrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy_w2qFqWlEsivxpMj6sh_7WGdpmLwPqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801433961278-6q0t4rq7hurqig5q9ue72bjle2qmbfrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

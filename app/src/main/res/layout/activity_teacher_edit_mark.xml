@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher.TeacherEditMark">
+
+    <ImageButton
+        android:id="@+id/teacherEditMark_backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/white"
+        android:onClick="goBack"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/teacherEditMark_Title"
+        app:layout_constraintEnd_toStartOf="@+id/teacherEditMark_Title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/teacherEditMark_Title"
+        app:srcCompat="@drawable/ic_arrow_left" />
+
+    <ImageButton
+        android:id="@+id/teacherEditMark_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:onClick="deleteTask"
+        android:padding="16dp"
+        android:tint="@color/colorOnSecondary1"
+        app:layout_constraintBottom_toBottomOf="@+id/teacherEditMark_Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/teacherEditMark_Title"
+        app:srcCompat="@drawable/ic_trash" />
+
+    <TextView
+        android:id="@+id/teacherEditMark_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/Mark"
+        android:textAppearance="@style/CommonText.MediumSize.Dark"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teacherEditTask_subTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/Editing"
+        android:textAppearance="@style/CommonText.MediumSize.Dark"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherEditMark_Title" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
+        android:text="Дата: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherEditMark_Title" />
+
+    <TextView
+        android:id="@+id/teacherEditMark_date"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/teacherEditMark_chooseDate"
+        style="@style/CommonText.MediumSize"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:onClick="setDate"
+        android:text="@string/Choose"
+        app:layout_constraintBottom_toBottomOf="@+id/teacherEditMark_date"
+        app:layout_constraintStart_toEndOf="@+id/teacherEditMark_date"
+        app:layout_constraintTop_toTopOf="@+id/teacherEditMark_date" />
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/Mark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Spinner
+        android:id="@+id/marksSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/teacherAddNewMark_markDescription"
+        style="@style/CommonText.MediumSize.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/Mark_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/teacherEditMark_descriptionField"
+        style="@style/NewTextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherAddNewMark_markDescription">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:focusable="true"
+            android:gravity="top|left"
+            android:hint="Опишіть тут причину оцінки"
+            android:inputType="textMultiLine"
+            android:maxLines="2"
+            android:minLines="1"
+            android:scrollbars="vertical" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="64dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherEditMark_descriptionField">
+
+        <Button
+            android:id="@+id/teacherEditMark_addButton"
+            style="@style/CommonText.MediumSize"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="250dp"
+            android:onClick="editMark"
+            android:text="@string/Done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/teacherAddNewTask_descriptionField" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
