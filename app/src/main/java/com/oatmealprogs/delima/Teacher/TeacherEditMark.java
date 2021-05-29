@@ -112,7 +112,7 @@ public class TeacherEditMark extends AppCompatActivity {
 
     public void editMark(View view) {
 
-        if (dateString == null || spinnerMarks == null || spinnerMarks.getSelectedItem() == "--") {
+        if (dateString == null || spinnerMarks == null || spinnerMarks.getSelectedItem().toString().equals("--")) {
             Snackbar snackbar = Snackbar.make(view,
                     "Виберіть дату та оцінку", Snackbar.LENGTH_SHORT);
             snackbar.show();

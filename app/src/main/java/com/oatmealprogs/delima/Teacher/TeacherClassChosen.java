@@ -76,7 +76,6 @@ public class TeacherClassChosen extends AppCompatActivity {
         Intent intent = new Intent(TeacherClassChosen.this, TeacherClassHomework.class);
         intent.putExtra("className", className);
 
-
         startActivity(intent);
         finish();
     }
@@ -84,7 +83,6 @@ public class TeacherClassChosen extends AppCompatActivity {
     public void chooseMarks(View view) {
         Intent intent = new Intent(TeacherClassChosen.this, TeacherClassMarks.class);
         intent.putExtra("className", className);
-
 
         startActivity(intent);
         finish();

@@ -30,8 +30,10 @@ import com.oatmealprogs.delima.Shared.HomeworkTask;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +44,8 @@ public class TeacherClassHomework extends AppCompatActivity {
     String className;
     HashMap<String, QueryDocumentSnapshot> hashMap = new HashMap<>();
     LinearLayout linearLayout;
-    ArrayList<QueryDocumentSnapshot> snapshots = new ArrayList<>();
+    ArrayDeque<QueryDocumentSnapshot> snapshots = new ArrayDeque<>();
+
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 /*
@@ -126,11 +129,13 @@ public class TeacherClassHomework extends AppCompatActivity {
                             }
 
                             String dateTime, description;
-                            for (QueryDocumentSnapshot entry : snapshots) {
-                                dateTime = String.valueOf(entry.get("datetime"));
-                                description = String.valueOf(entry.get("Description"));
+                            while (!snapshots.isEmpty()) {
+                                dateTime = String.valueOf(snapshots.peekLast().get("datetime"));
+                                description = String.valueOf(snapshots.peekLast().get("Description"));
                                 addTaskToList(dateTime, description);
+                                snapshots.pollLast();
                             }
+
 
 
                         } else {

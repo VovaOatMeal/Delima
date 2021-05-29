@@ -26,7 +26,7 @@ import java.util.HashMap;
 public class StudentMainScreen extends AppCompatActivity {
 
     TextView studentFirstName, studentLastName, studentClass, studentID;
-
+    String studentIdString;
     SessionManagerStudent sessionManagerStudent;
 
     @Override
@@ -68,5 +68,13 @@ public class StudentMainScreen extends AppCompatActivity {
         Intent i = new Intent(StudentMainScreen.this, StudentUserDetails.class);
         startActivity(i);
         finish();
+    }
+
+    public void openMyLessons(View view) {
+        Intent i = new Intent(StudentMainScreen.this, StudentMyLessons.class);
+        i.putExtra("studentID", studentIdString);
+        startActivity(i);
+        finish();
+
     }
 }

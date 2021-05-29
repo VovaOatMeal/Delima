@@ -4,47 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Teacher.TeacherClassStudentMarks">
+    tools:context=".Student.StudentMyMarks">
 
     <ImageButton
-        android:id="@+id/teacherClassStudentMarks_backButton"
+        android:id="@+id/studentMyMarks_backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:backgroundTint="@color/white"
         android:onClick="goBack"
         android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/teacherClassStudentMarks_Title"
-        app:layout_constraintEnd_toStartOf="@+id/teacherClassStudentMarks_Title"
+        app:layout_constraintBottom_toBottomOf="@+id/studentMyMarks_Title"
+        app:layout_constraintEnd_toStartOf="@+id/studentMyMarks_Title"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/teacherClassStudentMarks_Title"
+        app:layout_constraintTop_toTopOf="@+id/studentMyMarks_Title"
         app:srcCompat="@drawable/ic_arrow_left" />
 
     <TextView
-        android:id="@+id/teacherClassStudentMarks_Title"
+        android:id="@+id/studentMyMarks_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="@string/Marks"
+        android:text="@string/My_Marks"
         android:textAppearance="@style/CommonText.MediumSize.Dark"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/teacherClassStudentMarks_addButton"
-        style="@style/CommonText.MediumSize"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/Add"
-        android:onClick="addNewMark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teacherClassStudentMarks_Title" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -56,10 +44,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teacherClassStudentMarks_addButton">
+        app:layout_constraintTop_toBottomOf="@+id/studentMyMarks_Title">
 
         <LinearLayout
-            android:id="@+id/teacherClassStudentMarks_LinearLayout"
+            android:id="@+id/studentMyMarks_LinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:divider="@drawable/empty_tall_divider"

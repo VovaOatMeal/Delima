@@ -1,4 +1,4 @@
-package com.oatmealprogs.delima.Teacher;
+package com.oatmealprogs.delima.Student;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,34 +17,46 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.oatmealprogs.delima.R;
-import com.oatmealprogs.delima.Shared.HomeworkDetails;
+import com.oatmealprogs.delima.SessionManagerStudent;
 import com.oatmealprogs.delima.Shared.MarkDetails;
+import com.oatmealprogs.delima.Teacher.TeacherClassMarks;
+import com.oatmealprogs.delima.Teacher.TeacherClassStudentMarks;
+import com.oatmealprogs.delima.Teacher.TeacherEditMark;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
-public class TeacherClassStudentMarks extends AppCompatActivity {
+public class StudentMyMarks extends AppCompatActivity {
 
     Intent parentIntent;
-    String className, fullName, studentId;
+    String className, studentId, fullName;
 
     LinearLayout linearLayout;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     ArrayDeque<QueryDocumentSnapshot> snapshots = new ArrayDeque<>();
 
+    SessionManagerStudent sessionManagerStudent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_class_student_marks);
+        setContentView(R.layout.activity_student_my_marks);
 
         parentIntent = getIntent();
         className = parentIntent.getStringExtra("className");
-        fullName = parentIntent.getStringExtra("fullName");
         studentId = parentIntent.getStringExtra("studentID");
 
-        linearLayout = findViewById(R.id.teacherClassStudentMarks_LinearLayout);
+        linearLayout = findViewById(R.id.studentMyMarks_LinearLayout);
+
+        sessionManagerStudent = new SessionManagerStudent(getApplicationContext(), SessionManagerStudent.SESSION_LOGIN);
+        HashMap<String, String> hashMap = sessionManagerStudent.getLoginSession();
+
+        String firstName, lastName;
+        firstName = hashMap.get(SessionManagerStudent.KEY_FIRSTNAME);
+        lastName = hashMap.get(SessionManagerStudent.KEY_LASTNAME);
+        fullName = firstName + " " + lastName;
 
         String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 
@@ -73,6 +85,7 @@ public class TeacherClassStudentMarks extends AppCompatActivity {
                                 snapshots.pollLast();
                             }
 
+
                         } else {
                             return;
                         }
@@ -81,23 +94,14 @@ public class TeacherClassStudentMarks extends AppCompatActivity {
 
     }
 
-    public void goBack(View view) {
-        Intent intent = new Intent(TeacherClassStudentMarks.this, TeacherClassMarks.class);
-        intent.putExtra("className", className);
-        startActivity(intent);
-        finish();
-
-    }
-
     public void addMarkToList(String mark, String dateTimeString, String description) {
 
-        View view = LayoutInflater.from(this).inflate(R.layout.marks_item_teacher, null); // which view to add
+        View view = LayoutInflater.from(this).inflate(R.layout.marks_item, null); // which view to add
 
         TextView dateText = view.findViewById(R.id.dateLabel);
         TextView descriptionText = view.findViewById(R.id.markDescription);
         TextView markText = view.findViewById(R.id.markLabel);
         ImageButton buttonOpen = view.findViewById(R.id.markDetailsButton);
-        ImageButton buttonEdit = view.findViewById(R.id.editMarkButton);
 
         dateText.setText(dateTimeString);
         markText.setText(mark);
@@ -105,29 +109,14 @@ public class TeacherClassStudentMarks extends AppCompatActivity {
         buttonOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TeacherClassStudentMarks.this, MarkDetails.class);
+                Intent i = new Intent(StudentMyMarks.this, MarkDetails.class);
                 i.putExtra("datetime", dateTimeString);
                 i.putExtra("description", description);
                 i.putExtra("mark", mark);
                 i.putExtra("className", className);
                 i.putExtra("studentID", studentId);
                 i.putExtra("fullName", fullName);
-                i.putExtra("intentID", 0);
-                startActivity(i);
-                finish();
-
-            }
-        });
-        buttonEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(TeacherClassStudentMarks.this, TeacherEditMark.class);
-                i.putExtra("datetime", dateTimeString);
-                i.putExtra("description", description);
-                i.putExtra("mark", mark);
-                i.putExtra("className", className);
-                i.putExtra("studentID", studentId);
-                i.putExtra("fullName", fullName);
+                i.putExtra("intentID", 1);
                 startActivity(i);
                 finish();
 
@@ -137,11 +126,10 @@ public class TeacherClassStudentMarks extends AppCompatActivity {
 
     }
 
-    public void addNewMark(View view) {
-        Intent i = new Intent(TeacherClassStudentMarks.this, TeacherAddNewMark.class);
-        i.putExtra("className", className);
-        i.putExtra("studentID", studentId);
-        startActivity(i);
+    public void goBack(View view) {
+        Intent intent = new Intent(StudentMyMarks.this, StudentSubjectChosen.class);
+        startActivity(intent);
         finish();
+
     }
 }

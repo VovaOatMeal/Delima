@@ -34,71 +34,71 @@
         app:srcCompat="@drawable/ic_user" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="48dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
+        android:background="@drawable/user_card"
         android:paddingHorizontal="20dp"
         android:paddingVertical="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myDelimaText"
-        android:background="@drawable/user_card"
 
-        >
+        app:layout_constraintTop_toBottomOf="@+id/myDelimaText">
 
         <ImageView
             android:id="@+id/studentMainScreen_userPhoto"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:src="@drawable/ic_user_avatar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_user_avatar" />
-
-        <TextView
-            android:id="@+id/studentMainScreen_studentFirstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/CommonText.MediumSize.Dark"
-            tools:text="@tools:sample/first_names"
-            android:textSize="24sp"
-            android:layout_marginStart="30dp"
-            app:layout_constraintStart_toEndOf="@+id/studentMainScreen_userPhoto"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/studentMainScreen_studentLastName"
+            android:id="@+id/studentMainScreen_studentFirstName"
+            style="@style/CommonText.MediumSize.Dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/CommonText.MediumSize.Dark"
-            tools:text="@tools:sample/last_names"
+            android:layout_marginStart="30dp"
             android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/studentMainScreen_userPhoto"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/first_names" />
+
+        <TextView
+            android:id="@+id/studentMainScreen_studentLastName"
+            style="@style/CommonText.MediumSize.Dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="4dp"
+            android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/studentMainScreen_userPhoto"
-            app:layout_constraintTop_toBottomOf="@+id/studentMainScreen_studentFirstName" />
+            app:layout_constraintTop_toBottomOf="@+id/studentMainScreen_studentFirstName"
+            tools:text="@tools:sample/last_names" />
 
         <TextView
             android:id="@+id/studentMainScreen_classText"
+            style="@style/CommonText.MediumSize.Dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/CommonText.MediumSize.Dark"
-            android:text="@string/studentMainScreen_ClassOnCard"
-            android:textSize="20sp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="8dp"
+            android:text="@string/studentMainScreen_ClassOnCard"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/studentMainScreen_userPhoto"
             app:layout_constraintTop_toBottomOf="@+id/studentMainScreen_studentLastName" />
 
         <TextView
             android:id="@+id/studentMainScreen_studentClassName"
+            style="@style/CommonText.MediumSize.Dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/CommonText.MediumSize.Dark"
-            android:textSize="20sp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/studentMainScreen_classText"
             app:layout_constraintTop_toBottomOf="@+id/studentMainScreen_studentLastName" />
 
@@ -115,6 +115,19 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        style="@style/CommonText.MediumSize"
+        android:text="@string/Student_MyLessons"
+        android:onClick="openMyLessons"
+        android:backgroundTint="@color/colorSecondary"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

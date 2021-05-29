@@ -30,9 +30,9 @@
         <TextView
             android:id="@+id/markDescription"
             style="@style/CommonText.MediumSize.Dark"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
             android:text="Описание"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -41,29 +41,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/editMarkButton"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:tint="@color/almostWhite"
-            android:layout_marginStart="8dp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/markDescription"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_edit" />
-
-        <ImageButton
             android:id="@+id/markDetailsButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/colorPrimary"
             android:tint="@color/almostWhite"
-            android:layout_marginStart="8dp"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/editMarkButton"
+            app:layout_constraintStart_toEndOf="@+id/markDescription"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_arrow_right" />
 

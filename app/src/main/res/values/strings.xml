@@ -40,6 +40,9 @@
     <string name="New_Mark">Нова оцінка</string>
     <string name="Mark">Оцінка</string>
     <string name="Mark_description">Опис оцінки</string>
+    <string name="Student_MyLessons">Мої уроки</string>
+    <string name="My_Marks">Мої оцінки</string>
+    <string name="Mark_details">Деталі оцінки</string>
 
     <string-array name="class_numbers">
         <item>Цифра:</item>
@@ -63,7 +66,7 @@
         <item>Є</item>
     </string-array>
 
-    <string-array name="marks" >
+    <string-array name="marks">
         <item>--</item>
         <item>1</item>
         <item>2</item>

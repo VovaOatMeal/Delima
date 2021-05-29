@@ -100,6 +100,7 @@ public class TeacherAddNewMark extends AppCompatActivity {
     public void goBack(View view) {
         Intent intent = new Intent(TeacherAddNewMark.this, TeacherClassStudentMarks.class);
         intent.putExtra("className", className);
+        intent.putExtra("studentID", studentID);
         intent.putExtra("fullName", fullName);
         startActivity(intent);
         finish();
@@ -108,7 +109,7 @@ public class TeacherAddNewMark extends AppCompatActivity {
 
     public void addMark(View view) {
 
-        if (dateString == null || spinnerMarks == null || spinnerMarks.getSelectedItem() == "--") {
+        if (dateString == null || spinnerMarks == null || spinnerMarks.getSelectedItem().toString().equals("--")) {
             Snackbar snackbar = Snackbar.make(view,
                     "Виберіть дату та оцінку", Snackbar.LENGTH_SHORT);
             snackbar.show();
