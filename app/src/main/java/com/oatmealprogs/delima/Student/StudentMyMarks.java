@@ -58,7 +58,9 @@ public class StudentMyMarks extends AppCompatActivity {
         lastName = hashMap.get(SessionManagerStudent.KEY_LASTNAME);
         fullName = firstName + " " + lastName;
 
-        String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        String currentYear = "2021";
+        // следующая строка берёт текущий год, а в БД только 2021 год есть
+        // = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 
         db.collection("Year")
                 .document(currentYear)

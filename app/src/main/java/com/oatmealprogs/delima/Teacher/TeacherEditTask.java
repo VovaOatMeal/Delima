@@ -92,7 +92,9 @@ public class TeacherEditTask extends AppCompatActivity {
         task.put("Description", description.getEditText().getText().toString());
         task.put("datetime", dateString);
 
-        String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        String currentYear = "2021";
+        // следующая строка берёт текущий год, а в БД только 2021 год есть
+        // = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 
         db.collection("Year")
                 .document(currentYear)
@@ -126,7 +128,9 @@ public class TeacherEditTask extends AppCompatActivity {
 
 
     public void deleteTask(View view) {
-        String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        String currentYear = "2021";
+        // следующая строка берёт текущий год, а в БД только 2021 год есть
+        // = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 
         db.collection("Year")
                 .document(currentYear)

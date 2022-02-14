@@ -36,7 +36,9 @@ public class HomeworkAdapter extends RecyclerView.Adapter<HomeworkAdapter.ViewHo
     public HomeworkAdapter(Context context, HashMap<String, QueryDocumentSnapshot> hashMap, String className) {
         this.tasks = new ArrayList<>();
 
-        String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        String currentYear = "2021";
+        // следующая строка берёт текущий год, а в БД только 2021 год есть
+        // = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         Query query = db.collection("Year")

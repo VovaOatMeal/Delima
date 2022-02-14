@@ -50,6 +50,8 @@
             app:layout_constraintStart_toEndOf="@+id/homeworkDescription"
             app:layout_constraintTop_toTopOf="parent" />
 -->
+
+
         <ImageButton
             android:id="@+id/editButton"
             android:layout_width="60dp"
@@ -62,7 +64,6 @@
             app:layout_constraintStart_toEndOf="@+id/homeworkDescription"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_edit" />
-
 
         <ImageButton
             android:id="@+id/detailsButton"

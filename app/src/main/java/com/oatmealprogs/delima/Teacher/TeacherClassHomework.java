@@ -62,8 +62,9 @@ public class TeacherClassHomework extends AppCompatActivity {
 
         linearLayout = findViewById(R.id.teacherClassHomework_LinearLayout);
 
-        String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
-
+        String currentYear = "2021";
+        // следующая строка берёт текущий год, а в БД только 2021 год есть
+        // = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 
 /*
         // Here starts the procedure of filling the RecyclerView that is the same for both Teacher and Student

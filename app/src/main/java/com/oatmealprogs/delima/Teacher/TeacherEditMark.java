@@ -123,7 +123,9 @@ public class TeacherEditMark extends AppCompatActivity {
         markMap.put("datetime", dateString);
         markMap.put("Mark", spinnerMarks.getSelectedItem().toString());
 
-        String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        String currentYear = "2021";
+        // следующая строка берёт текущий год, а в БД только 2021 год есть
+        // = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 
         db.collection("Year")
                 .document(currentYear)
@@ -157,7 +159,9 @@ public class TeacherEditMark extends AppCompatActivity {
     }
 
     public void deleteTask(View view) {
-        String currentYear = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        String currentYear = "2021";
+        // следующая строка берёт текущий год, а в БД только 2021 год есть
+        // = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 
         db.collection("Year")
                 .document(currentYear)
