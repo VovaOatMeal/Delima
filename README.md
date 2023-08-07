@@ -1,3 +1,5 @@
+> **This app is no longer supported.** It's now replaced by the cross-platform version built on Flutter.
+
 ## Delima
 
 > Додаток для шкіл та учнів і вчителів для цифровізації та спрощення навчального процесу. Додаток у стані альфа версії, демонструє найважливіший функціонал та потребує доопрацювання.
